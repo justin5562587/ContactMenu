@@ -19,7 +19,9 @@ public:
     Person(int id, std::string name, int age, int sex, std::string addr, std::string phone) : m_id(id), m_Name(name), m_Age(age), m_Sex(sex), m_Addr(addr), m_Phone(phone) {
     }
 
-    void showInfo();
+    void showBaseInfo();
+
+    void showDetailInfo();
 };
 
 #endif //CONTACTMENU_PERSON_H

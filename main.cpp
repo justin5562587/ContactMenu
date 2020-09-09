@@ -34,18 +34,21 @@ int main() {
                 contactMenu.showPersons();
                 break;
             case 3: // 删除联系人
+                contactMenu.removePerson();
                 break;
             case 4: // 查找联系人
+                contactMenu.searchPerson();
                 break;
             case 5: // 修改联系人
+                contactMenu.modifyPerson();
                 break;
             case 6: // 清空联系人
+                contactMenu.clearPersons();
                 break;
             case 0: // 退出通讯录
                 cout << "欢迎下次使用通讯录" << endl;
                 system("pause");
                 return 0;
-                break;
             default:
                 break;
         }

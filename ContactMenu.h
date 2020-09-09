@@ -7,21 +7,22 @@
 #define CONTACTMENU_CONTACTMENU_H
 
 class ContactMenu {
-private:
-    std::vector<Person> personVec;
-    int m_Size = 0;
-
 public:
+
     void addPerson();
 
     void modifyPerson();
 
     void showPersons();
 
+    void searchPerson();
+
     void removePerson();
 
-    int currentSize();
+    void clearPersons();
 
+private:
+    std::vector<Person> personVec;
 };
 
 #endif //CONTACTMENU_CONTACTMENU_H
