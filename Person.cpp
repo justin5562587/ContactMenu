@@ -22,5 +22,10 @@ void Person::showDetailInfo() {
     std::cout << "Phone: " << m_Phone << std::endl;
 }
 
-
-
+void Person::modifyInfo(std::string name, int age, int sex, std::string addr, std::string phone) {
+    m_Name = name;
+    m_Age = age;
+    m_Sex = sex;
+    m_Addr = addr;
+    m_Phone = phone;
+}

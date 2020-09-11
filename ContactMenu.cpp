@@ -77,45 +77,43 @@ void ContactMenu::searchPerson() {
     }
 }
 
-// todo
 void ContactMenu::modifyPerson() {
-     const std::string name = getCin("Please input orderId of which you want to modify");
+     while(true) {
+         const std::string name = getCin("Please input name of which you want to modify");
+         int foundIndex = findPersonIndexByName(name);
 
-    for (int i = 0; i < personVec.size(); ++i) {
-        Person &item = personVec.at(i);
-        if (item.getName().compare(name) == 0) {
-            std::cout << "Please select what attr that you want to modify" << std::endl;
-            std::cout << "1.name" << std::endl;
-            std::cout << "2.sex" << std::endl;
-            std::cout << "3.age" << std::endl;
-            std::cout << "4.address" << std::endl;
-            std::cout << "5.phone" << std::endl;
-            std::cout << "0.exit" << std::endl;
+         if (foundIndex > -1) {
+             Person& item = personVec.at(foundIndex);
+             std::cout << "Reset all fields of " << name << std::endl;
 
-            int select = 0;
-            std::cin >> select;
-            switch (select) {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 0:
-                    break;
-                default:
-                    break;
+             std::string name;
+             std::cout << "Please input name: " << std::endl;
+             std::cin >> name;
 
-            }
+             int sex;
+             std::cout << "Please input sex: " << std::endl;
+             std::cin >> sex;
 
-        } else {
-            std::cout << "" << std::endl;
-        }
-    }
+             int age;
+             std::cout << "Please input age: " << std::endl;
+             std::cin >> age;
+
+             std::string addr;
+             std::cout << "Please input address: " << std::endl;
+             std::cin >> addr;
+
+             std::string phone;
+             std::cout << "Please input phone: " << std::endl;
+             std::cin >> phone;
+
+             item.modifyInfo(name, age, sex, addr, phone);
+             item.showDetailInfo();
+             std::cout << "Modify information successfully" << std::endl;
+
+             break;
+         }
+     }
+
 }
 
 void ContactMenu::showPersons() {

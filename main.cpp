@@ -9,7 +9,7 @@ void showMenu () {
     cout << "***** 2.显示联系人 *****" << endl;
     cout << "***** 3.删除联系人 *****" << endl;
     cout << "***** 4.查找联系人 *****" << endl;
-//    cout << "***** 5.修改联系人 *****" << endl;
+    cout << "***** 5.修改联系人 *****" << endl;
     cout << "***** 6.清空联系人 *****" << endl;
     cout << "***** 0.退出通讯录 *****" << endl;
 }
@@ -38,9 +38,9 @@ int main() {
             case 4: // 查找联系人
                 contactMenu.searchPerson();
                 break;
-//            case 5: // 修改联系人
-//                contactMenu.modifyPerson();
-//                break;
+            case 5: // 修改联系人
+                contactMenu.modifyPerson();
+                break;
             case 6: // 清空联系人
                 contactMenu.clearPersons();
                 break;

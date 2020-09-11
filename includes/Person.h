@@ -18,6 +18,8 @@ public:
     Person(std::string name, int age, int sex, std::string addr, std::string phone) : m_Name(name), m_Age(age), m_Sex(sex), m_Addr(addr), m_Phone(phone) {
     }
 
+    void modifyInfo(std::string name, int age, int sex, std::string addr, std::string phone);
+
     void showBaseInfo();
 
     void showDetailInfo();
