@@ -3,6 +3,7 @@
 //
 #include <vector>
 #include <string>
+#include "Person.h"
 
 #ifndef CONTACTMENU_CONTACTMENU_H
 #define CONTACTMENU_CONTACTMENU_H

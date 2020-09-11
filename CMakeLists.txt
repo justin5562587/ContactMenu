@@ -3,4 +3,4 @@ project(ContactMenu VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(ContactMenu main.cpp)
+add_executable(ContactMenu main.cpp ContactMenu.cpp Person.cpp)

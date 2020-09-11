@@ -14,7 +14,7 @@ const int MAX = 100;
 const std::string getCin(const std::string& noticeMessage) {
     std::cout << noticeMessage << std::endl;
     std::string name;
-    cin >> name;
+    std::cin >> name;
 
     return name;
 }
@@ -22,7 +22,7 @@ const std::string getCin(const std::string& noticeMessage) {
 int ContactMenu::findPersonIndexByName(const std::string &name) {
     for (int i = 0; i < personVec.size(); ++i) {
         auto item = personVec.at(i);
-        if (item.m_Name.compare(name) == 0) {
+        if (item.getName().compare(name) == 0) {
             return i;
         }
     }
@@ -32,29 +32,29 @@ int ContactMenu::findPersonIndexByName(const std::string &name) {
 }
 
 void ContactMenu::addPerson() {
-    if (m_Size == MAX) {
+    if (personVec.size() == MAX) {
         std::cout << "ContactMenu is full" << std::endl;
         return;
     } else {
         std::string name;
         std::cout << "Please input name: " << std::endl;
-        cin >> name;
+        std::cin >> name;
 
         int sex;
         std::cout << "Please input sex: " << std::endl;
-        cin >> sex;
+        std::cin >> sex;
 
         int age;
         std::cout << "Please input age: " << std::endl;
-        cin >> age;
+        std::cin >> age;
 
         std::string addr;
         std::cout << "Please input address: " << std::endl;
-        cin >> addr;
+        std::cin >> addr;
 
         std::string phone;
         std::cout << "Please input phone: " << std::endl;
-        cin >> phone;
+        std::cin >> phone;
 
         Person person(name, age, sex, addr, phone);
         personVec.push_back(person);
@@ -81,12 +81,11 @@ void ContactMenu::searchPerson() {
 
 // todo
 void ContactMenu::modifyPerson() {
-    std::cout << "Please input orderId of which you want to modify" << std::endl;
-    int id = -1;
-    cin >> id;
+     const std::string name = getCin("Please input orderId of which you want to modify");
+
     for (int i = 0; i < personVec.size(); ++i) {
         Person &item = personVec.at(i);
-        if (item.m_id == id) {
+        if (item.getName().compare(name) == 0) {
             std::cout << "Please select what attr that you want to modify" << std::endl;
             std::cout << "1.name" << std::endl;
             std::cout << "2.sex" << std::endl;
@@ -96,7 +95,7 @@ void ContactMenu::modifyPerson() {
             std::cout << "0.exit" << std::endl;
 
             int select = 0;
-            cin >> select;
+            std::cin >> select;
             switch (select) {
                 case 1:
                     break;
@@ -150,7 +149,7 @@ void ContactMenu::clearPersons() {
     std::cout << "OTHER to cancel then exit" << std::endl;
 
     std::string order;
-    cin >> order;
+    std::cin >> order;
     if (order.compare("Y")) {
         personVec.erase(personVec.begin(), personVec.end());
         std::cout << "Clear ContactMenu successfully" << std::endl;

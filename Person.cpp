@@ -4,22 +4,23 @@
 
 #include "Person.h"
 #include <string>
+#include <iostream>
 
-const std::string& Person::getName() {
+const std::string Person::getName() {
     return m_Name;
 }
 
 void Person::showBaseInfo() {
-    cout << "Name: " << m_Name << endl;
-    cout << "Phone: " << m_Phone << endl;
+    std::cout << "Name: " << m_Name << std::endl;
+    std::cout << "Phone: " << m_Phone << std::endl;
 }
 
 void Person::showDetailInfo() {
-    cout << "Name: " << m_Name << endl;
-    cout << "Age: " << m_Age << endl;
-    cout << "Sex: " << (m_Sex ? "male" : "female") << endl;
-    cout << "Address: " << m_Addr << endl;
-    cout << "Phone: " << m_Phone << endl;
+    std::cout << "Name: " << m_Name << std::endl;
+    std::cout << "Age: " << m_Age << std::endl;
+    std::cout << "Sex: " << (m_Sex ? "male" : "female") << std::endl;
+    std::cout << "Address: " << m_Addr << std::endl;
+    std::cout << "Phone: " << m_Phone << std::endl;
 }
 
 

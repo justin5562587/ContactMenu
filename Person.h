@@ -22,7 +22,7 @@ public:
 
     void showDetailInfo();
 
-    const std::string& getName();
+    const std::string getName();
 };
 
 #endif //CONTACTMENU_PERSON_H
