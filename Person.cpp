@@ -3,6 +3,11 @@
 //
 
 #include "Person.h"
+#include <string>
+
+const std::string& Person::getName() {
+    return m_Name;
+}
 
 void Person::showBaseInfo() {
     cout << "Name: " << m_Name << endl;
@@ -16,4 +21,6 @@ void Person::showDetailInfo() {
     cout << "Address: " << m_Addr << endl;
     cout << "Phone: " << m_Phone << endl;
 }
+
+
 
