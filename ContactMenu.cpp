@@ -1,13 +1,11 @@
 //
 // Created by justin on 2020/09/09.
 //
-
-#include "ContactMenu.h"
-#include "Person.h"
-
 #include <vector>
 #include <string>
 #include <iostream>
+#include "includes/ContactMenu.h"
+#include "includes/Person.h"
 
 const int MAX = 100;
 

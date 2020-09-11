@@ -1,10 +1,9 @@
 #include <iostream>
-#include "Person.h"
-#include "ContactMenu.h"
+#include "includes/Person.h"
+#include "includes/ContactMenu.h"
 
 using namespace std;
 
-// show menu
 void showMenu () {
     cout << "***** 1.添加联系人 *****" << endl;
     cout << "***** 2.显示联系人 *****" << endl;

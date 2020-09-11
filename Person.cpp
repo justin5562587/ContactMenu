@@ -1,10 +1,9 @@
 //
 // Created by justin on 2020/09/09.
 //
-
-#include "Person.h"
 #include <string>
 #include <iostream>
+#include "includes/Person.h"
 
 const std::string Person::getName() {
     return m_Name;
