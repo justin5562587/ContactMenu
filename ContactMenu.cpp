@@ -10,7 +10,7 @@
 
 const int MAX = 100;
 
-const std::string getCin(const std::string& noticeMessage) {
+const std::string getCin(const std::string &noticeMessage) {
     std::cout << noticeMessage << std::endl;
     std::string name;
     std::cin >> name;
@@ -31,10 +31,7 @@ int ContactMenu::findPersonIndexByName(const std::string &name) {
 }
 
 void ContactMenu::addPerson() {
-    if (personVec.size() == MAX) {
-        std::cout << "ContactMenu is full" << std::endl;
-        return;
-    } else {
+    if (personVec.size() != MAX) {
         std::string name;
         std::cout << "Please input name: " << std::endl;
         std::cin >> name;
@@ -59,11 +56,13 @@ void ContactMenu::addPerson() {
         personVec.push_back(person);
 
         std::cout << "Add Person into ContactMenu successfully!" << std::endl;
+    } else {
+        std::cout << "ContactMenu is full" << std::endl;
     }
 }
 
 void ContactMenu::searchPerson() {
-    while(true) {
+    while (true) {
         const std::string name = getCin("Please input name of which you want to search");
         int foundIndex = ContactMenu::findPersonIndexByName(name);
         if (foundIndex > -1) {
@@ -79,41 +78,41 @@ void ContactMenu::searchPerson() {
 }
 
 void ContactMenu::modifyPerson() {
-     while(true) {
-         const std::string name = getCin("Please input name of which you want to modify");
-         int foundIndex = findPersonIndexByName(name);
+    while (true) {
+        const std::string name = getCin("Please input name of which you want to modify");
+        int foundIndex = findPersonIndexByName(name);
 
-         if (foundIndex > -1) {
-             Person& item = personVec.at(foundIndex);
-             std::cout << "Reset all fields of " << name << std::endl;
+        if (foundIndex > -1) {
+            Person &item = personVec.at(foundIndex);
+            std::cout << "Reset all fields of " << name << std::endl;
 
-             std::string name;
-             std::cout << "Please input name: " << std::endl;
-             std::cin >> name;
+            std::string name;
+            std::cout << "Please input name: " << std::endl;
+            std::cin >> name;
 
-             int sex;
-             std::cout << "Please input sex: " << std::endl;
-             std::cin >> sex;
+            int sex;
+            std::cout << "Please input sex: " << std::endl;
+            std::cin >> sex;
 
-             int age;
-             std::cout << "Please input age: " << std::endl;
-             std::cin >> age;
+            int age;
+            std::cout << "Please input age: " << std::endl;
+            std::cin >> age;
 
-             std::string addr;
-             std::cout << "Please input address: " << std::endl;
-             std::cin >> addr;
+            std::string addr;
+            std::cout << "Please input address: " << std::endl;
+            std::cin >> addr;
 
-             std::string phone;
-             std::cout << "Please input phone: " << std::endl;
-             std::cin >> phone;
+            std::string phone;
+            std::cout << "Please input phone: " << std::endl;
+            std::cin >> phone;
 
-             item.modifyInfo(name, age, sex, addr, phone);
-             item.showDetailInfo();
-             std::cout << "Modify information successfully" << std::endl;
+            item.modifyInfo(name, age, sex, addr, phone);
+            item.showDetailInfo();
+            std::cout << "Modify information successfully" << std::endl;
 
-             break;
-         }
-     }
+            break;
+        }
+    }
 
 }
 
@@ -127,7 +126,7 @@ void ContactMenu::showPersons() {
 }
 
 void ContactMenu::removePerson() {
-    while(true) {
+    while (true) {
         const std::string name = getCin("Please input name of which you want to delete");
         int foundIndex = ContactMenu::findPersonIndexByName(name);
 
@@ -156,14 +155,25 @@ void ContactMenu::clearPersons() {
 void ContactMenu::renderCSV() {
     std::ofstream myFile("ContactMenu.csv");
 
-    // Send the column name to the stream
-    myFile << "Name," << "Phone" << "\n";
+    std::string columns[] = {"Name", "Phone", "Age", "Sex", "Address"};
+    auto len = sizeof(columns) / sizeof(columns[0]);
+    for (int k = 0; k < len;) {
+        myFile << columns[k++];
+        if (k != len) {
+            myFile << ",";
+        } else {
+            myFile << "\n";
+        }
+    }
 
     // Send data to the stream
-    for(int i = 0; i < personVec.size(); ++i)
-    {
-        Person& item = personVec.at(i);
-        myFile << item.getName() << "," << item.getPhone() << "\n";
+    for (int i = 0; i < personVec.size(); ++i) {
+        Person &item = personVec.at(i);
+        myFile << item.getName() << ","
+               << item.getPhone() << ","
+               << item.getAge() << ","
+               << item.getSex() << ","
+               << item.getAddr() << "\n";
     }
 
     // Close the file

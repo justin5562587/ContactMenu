@@ -15,7 +15,9 @@ private:
     std::string m_Phone;
 
 public:
-    Person(std::string name, int age, int sex, std::string addr, std::string phone) : m_Name(name), m_Age(age), m_Sex(sex), m_Addr(addr), m_Phone(phone) {
+    Person(std::string name, int age, int sex, std::string addr, std::string phone) : m_Name(name), m_Age(age),
+                                                                                      m_Sex(sex), m_Addr(addr),
+                                                                                      m_Phone(phone) {
     }
 
     void modifyInfo(std::string name, int age, int sex, std::string addr, std::string phone);
@@ -24,9 +26,25 @@ public:
 
     void showDetailInfo();
 
-    const std::string getName();
+    const std::string getName() {
+        return m_Name;
+    };
 
-    const std::string getPhone();
+    const std::string getPhone() {
+        return m_Phone;
+    };
+
+    const int getAge() {
+        return m_Age;
+    };
+
+    const int getSex() {
+        return m_Sex;
+    };
+
+    const std::string getAddr() {
+        return m_Addr;
+    };
 };
 
 #endif //CONTACTMENU_PERSON_H

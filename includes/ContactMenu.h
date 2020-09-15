@@ -11,6 +11,10 @@
 class ContactMenu {
 public:
 
+    ContactMenu() {
+
+    }
+
     void addPerson();
 
     void modifyPerson();

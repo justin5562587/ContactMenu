@@ -5,14 +5,6 @@
 #include <iostream>
 #include "includes/Person.h"
 
-const std::string Person::getName() {
-    return m_Name;
-}
-
-const std::string Person::getPhone() {
-    return m_Phone;
-}
-
 void Person::showBaseInfo() {
     std::cout << "Name: " << m_Name << std::endl;
     std::cout << "Phone: " << m_Phone << std::endl;
