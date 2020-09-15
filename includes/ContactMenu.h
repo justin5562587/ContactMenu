@@ -25,6 +25,8 @@ public:
 
     int findPersonIndexByName(const std::string& name);
 
+    void renderCSV();
+
 private:
     std::vector<Person> personVec;
 };

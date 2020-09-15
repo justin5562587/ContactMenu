@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 include_directories(includes)
 
-add_executable(ContactMenu main.cpp ContactMenu.cpp Person.cpp)
+add_executable(ContactMenu main.cpp ContactMenu.cpp Person.cpp CSVController.cpp)

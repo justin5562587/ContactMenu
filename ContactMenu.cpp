@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "includes/ContactMenu.h"
 #include "includes/Person.h"
 
@@ -150,4 +151,21 @@ void ContactMenu::clearPersons() {
         personVec.erase(personVec.begin(), personVec.end());
         std::cout << "Clear ContactMenu successfully" << std::endl;
     }
+}
+
+void ContactMenu::renderCSV() {
+    std::ofstream myFile("ContactMenu.csv");
+
+    // Send the column name to the stream
+    myFile << "Name," << "Phone" << "\n";
+
+    // Send data to the stream
+    for(int i = 0; i < personVec.size(); ++i)
+    {
+        Person& item = personVec.at(i);
+        myFile << item.getName() << "," << item.getPhone() << "\n";
+    }
+
+    // Close the file
+    myFile.close();
 }

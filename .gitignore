@@ -14,6 +14,7 @@ yarn-error.log
 *bak
 .vscode
 /cmake-build-debug
+/cmake-build-release
 
 # visual studio code
 .history

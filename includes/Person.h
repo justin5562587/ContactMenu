@@ -25,6 +25,8 @@ public:
     void showDetailInfo();
 
     const std::string getName();
+
+    const std::string getPhone();
 };
 
 #endif //CONTACTMENU_PERSON_H

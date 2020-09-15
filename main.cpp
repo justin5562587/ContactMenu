@@ -44,6 +44,9 @@ int main() {
             case 6: // 清空联系人
                 contactMenu.clearPersons();
                 break;
+            case 7:
+                contactMenu.renderCSV();
+                break;
             case 0: // 退出通讯录
                 cout << "欢迎下次使用通讯录" << endl;
                 system("pause");
