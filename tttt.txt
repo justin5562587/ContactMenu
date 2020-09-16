@@ -1,0 +1,29 @@
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
+export JAVA=$JAVA_HOME/bin
+
+GRADLE_HOME=/Users/justin/gradle-3.5.1
+export GRADLE=$GRADLE_HOME/bin
+
+MYSQL_HOME=/usr/local/mysql
+export MYSQL=$MYSQL_HOME/bin
+
+M2_HOME=/Users/justin/apache-maven-3.6.0
+export M2=$M2_HOME/bin
+
+PYTHON3_HOME=/usr/local/Cellar/python/3.7.2_2
+export PYTHON3=$PYTHON3_HOME/bin
+
+PIP3_HOME=/usr/local/Cellar/python/3.7.2_2/Frameworks/Python.framework/Versions/3.7
+export PIP3=$PIP3_HOME/bin
+
+GO_HOME=/usr/local/go/bin
+
+CMAKE_HOME=/Applications/CMake.app/Contents/bin
+
+export PATH=$PATH:/usr/local:$M2:$MYSQL:$JAVA:$PYTHON3:$PIP3:$GO_HOME:$CMAKE_HOME;
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+#export SDKMAN_DIR="/Users/justin/.sdkman"
+#[[ -s "/Users/justin/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/justin/.sdkman/bin/sdkman-init.sh"
+
+export PATH="$HOME/.poetry/bin:$PATH"
